@@ -2,7 +2,7 @@ name: Scheduled Node.js CI
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "5 6 * * *"
   workflow_dispatch: # 添加这行以允许手动触发
 
 jobs:
@@ -15,9 +15,9 @@ jobs:
         node-version: [20.x] 
 
     steps:
-      - uses: actions/checkout@v3 
+      - uses: actions/checkout@v4 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
